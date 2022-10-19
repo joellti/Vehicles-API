@@ -1,0 +1,24 @@
+# H2
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:mem:prices
+  # https://stackoverflow.com/a/67695070
+  jpa: 
+    defer-datasource-initialization: true
+  application:
+    name: pricing-service
+
+server:
+  port: 8762
+
+# Register with Eureka
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
